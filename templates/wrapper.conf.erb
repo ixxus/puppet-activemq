@@ -5,9 +5,9 @@
 # The ASF licenses this file to You under the Apache License, Version 2.0
 # (the "License"); you may not use this file except in compliance with
 # the License.  You may obtain a copy of the License at
-# 
+#
 # http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -57,21 +57,22 @@ wrapper.java.additional.8=-Dorg.apache.activemq.UseDedicatedTaskRunner=true
 wrapper.java.additional.9=-Djava.util.logging.config.file=logging.properties
 wrapper.java.additional.10=-Dactivemq.conf=%ACTIVEMQ_CONF%
 wrapper.java.additional.11=-Dactivemq.data=%ACTIVEMQ_DATA%
-wrapper.java.additional.12=-Dhawtio.realm=activemq
-wrapper.java.additional.13=-Dhawtio.role=admins
-wrapper.java.additional.14=-Dhawtio.rolePrincipalClasses=org.apache.activemq.jaas.GroupPrincipal
-wrapper.java.additional.15=-Djava.security.auth.login.config=%ACTIVEMQ_CONF%/login.config
+wrapper.java.additional.12=-Djava.net.preferIPv4Stack=true
+wrapper.java.additional.13=-Dhawtio.realm=activemq
+wrapper.java.additional.14=-Dhawtio.role=admins
+wrapper.java.additional.15=-Dhawtio.rolePrincipalClasses=org.apache.activemq.jaas.GroupPrincipal
+wrapper.java.additional.16=-Djava.security.auth.login.config=%ACTIVEMQ_CONF%/login.config
 
 # Uncomment to enable jmx
-#wrapper.java.additional.n=-Dcom.sun.management.jmxremote.port=1616 
-#wrapper.java.additional.n=-Dcom.sun.management.jmxremote.authenticate=false 
+#wrapper.java.additional.n=-Dcom.sun.management.jmxremote.port=1616
+#wrapper.java.additional.n=-Dcom.sun.management.jmxremote.authenticate=false
 #wrapper.java.additional.n=-Dcom.sun.management.jmxremote.ssl=false
 
 # Uncomment to enable YourKit profiling
 #wrapper.java.additional.n=-Xrunyjpagent
 
 # Uncomment to enable remote debugging
-#wrapper.java.additional.n=-Xdebug -Xnoagent -Djava.compiler=NONE 
+#wrapper.java.additional.n=-Xdebug -Xnoagent -Djava.compiler=NONE
 #wrapper.java.additional.n=-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 
 # Initial Java Heap Size (in MB)
