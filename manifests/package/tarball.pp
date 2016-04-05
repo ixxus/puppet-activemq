@@ -34,7 +34,7 @@ class activemq::package::tarball (
   }
 
   wget::fetch { 'activemq_download':
-    source      => "${activemq::apache_mirror}/activemq/apache-activemq/${version}/apache-activemq-${version}-bin.tar.gz",
+    source      => "${activemq::apache_mirror}/${version}/apache-activemq-${version}-bin.tar.gz",
     destination => "/usr/local/src/apache-activemq-${version}-bin.tar.gz",
   } ->
   exec { 'activemq_untar':
