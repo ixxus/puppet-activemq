@@ -1,5 +1,5 @@
 class activemq::package::tarball (
-  $version      = '5.8.0',
+  $version      = '5.10.0',
   $home         = $activemq::home,
   $user         = $activemq::user,
   $group        = $activemq::group,
