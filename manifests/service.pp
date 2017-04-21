@@ -1,12 +1,14 @@
 class activemq::service (
+  $enable = $activemq::params::enable,
+  $ensure = $activemq::params::ensure,
 ) inherits activemq::params {
 
   service { 'activemq':
-    ensure     => $activemq::params::ensure,
+    ensure     => $ensure,
     name       => 'activemq',
     hasrestart => true,
     hasstatus  => false,
-    enable     => $activemq::params::enable,
+    enable     => $enable,
     require    => Anchor['activemq::package::end'],
   }
 }

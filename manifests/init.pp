@@ -28,8 +28,8 @@ class activemq (
   $package_type       = $activemq::params::package_type,
   $architecture_flag  = $activemq::params::architecture_flag,
   $activemqxml_source = undef,
-  $ensure             = $activemq::params::ensure,
-  $enable             = $activemq::params::enable,
+  $serviceensure      = $activemq::params::ensure,
+  $serviceenable      = $activemq::params::enable,
 ) inherits activemq::params {
 
   validate_re($package_type, '^rpm$|^tarball$')
@@ -90,5 +90,8 @@ class activemq (
     }
   }
 
-  class { 'activemq::service': }
+  class { 'activemq::service':
+    enable => $serviceenable,
+    ensure => $serviceensure,
+  }
 }
