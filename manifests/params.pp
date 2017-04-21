@@ -9,6 +9,8 @@ class activemq::params (
   $package_type   = 'tarball',
   $manage_user    = true,
   $manage_group   = true,
+  $ensure         = running,
+  $enable         = true,
 ) {
 
   # path flag for the activemq init script template
