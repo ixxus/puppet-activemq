@@ -45,6 +45,10 @@ class activemq::package::tarball (
     before  => File["${home}/activemq"],
   }
 
+  exec { 'activemq_tmpfiles.d': 
+    command => "/bin/echo -e \"d /run/activemq 0755 $user $group\" > /usr/lib/tmpfiles.d/activemq.conf", 
+  } 
+
   file { "${home}/activemq":
     ensure  => "${home}/apache-activemq-${version}",
     owner   => $user,
