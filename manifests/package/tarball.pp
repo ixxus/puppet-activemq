@@ -1,5 +1,5 @@
 class activemq::package::tarball (
-  $version      = '5.8.0',
+  $version      = '5.10.0',
   $home         = $activemq::home,
   $user         = $activemq::user,
   $group        = $activemq::group,
@@ -38,7 +38,7 @@ class activemq::package::tarball (
   }
 
   wget::fetch { 'activemq_download':
-    source      => "${activemq::apache_mirror}/activemq/apache-activemq/${version}/apache-activemq-${version}-bin.tar.gz",
+    source      => "${activemq::apache_mirror}/${version}/apache-activemq-${version}-bin.tar.gz",
     destination => "/usr/local/src/apache-activemq-${version}-bin.tar.gz",
   } ->
   exec { 'activemq_untar':
@@ -48,6 +48,10 @@ class activemq::package::tarball (
     path    => ['/bin'],
     before  => File["${home}/activemq"],
   }
+
+  exec { 'activemq_tmpfiles.d': 
+    command => "/bin/echo -e \"d /run/activemq 0755 $user $group\" > /usr/lib/tmpfiles.d/activemq.conf", 
+  } 
 
   file { "${home}/activemq":
     ensure  => "${home}/apache-activemq-${version}",

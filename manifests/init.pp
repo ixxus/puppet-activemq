@@ -98,5 +98,8 @@ class activemq (
     }
   }
 
-  class { 'activemq::service': }
+  class { 'activemq::service':
+    enable => $serviceenable,
+    ensure => $serviceensure,
+  }
 }
